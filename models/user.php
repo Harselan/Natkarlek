@@ -1,23 +1,46 @@
 <?php
 class User
 {
-    public static function get( $id = 0 )
+    public static function login( $post )
     {
-        if( $id == 0)
+
+        $get = DB::getConnection()->prepare( "SELECT id, password FROM users WHERE name = :name LIMIT 1" );
+        $get->execute( array(
+            ':name'     => $post['name']
+        ) );
+        $id = $get->fetchAll()[0];
+
+        if( !isset( $id['id'] ) )
         {
-            $get = DB::getConnection()->prepare("SELECT users.*, user_states.state FROM users INNER JOIN user_states ON users.state_id = user_states.id ORDER BY users.name ");
-            if( ! $get->execute() ) {
-                die(var_export(DB::getConnection()->errorinfo(), TRUE));
-            }
-            return $get->fetchAll();
+            return false;
+            die();
+        }
+
+        if( !password_verify( $post['password'], $id['password']  ) )
+        {
+            return false;
+        }
+
+        $_SESSION['user_name']    = $post['name'];
+        $_SESSION['user_id']      = $id['id'];
+
+        return true;
+    }
+
+    public static function logout()
+    {
+        session_destroy();
+    }
+
+    public static function loggedIn()
+    {
+        if( !isset( $_SESSION['user_name'] ) || !isset( $_SESSION['user_id'] ) )
+        {
+            return false;
         }
         else
         {
-            $get = DB::getConnection()->prepare("SELECT users.*, user_states.state FROM users INNER JOIN user_states ON users.state_id = user_states.id WHERE users.id = :id LIMIT 1");
-            if( ! $get->execute( array( ':id' => $id ) ) ) {
-                die(var_export(DB::getConnection()->errorinfo(), TRUE));
-            }
-            return $get->fetchAll()[0];
+            return true;
         }
     }
 }

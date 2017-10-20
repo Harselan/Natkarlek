@@ -15,6 +15,7 @@ DB::init();
 
 # Include all models
 require_once($_SERVER['DOCUMENT_ROOT'] . '/models/user.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/models/message.php');
 # Include the route system
 require_once($_SERVER['DOCUMENT_ROOT'] . '/routes/route.php');
 
@@ -23,6 +24,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/routes/web.php');
 
 #Controllers
 require_once($_SERVER['DOCUMENT_ROOT'] . '/controllers/DashboardController.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/controllers/UserController.php');
 
 # Runs all routes
 Route::run();

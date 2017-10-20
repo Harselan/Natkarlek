@@ -7,6 +7,10 @@
 body{
     background-color:#ecf0f1;
 }
+.login-wrapper{
+    width:60%;
+    margin:0 auto;
+}
 .hero, .slideshow, .comment{
     height:90vh;
     background-attachment: fixed;
