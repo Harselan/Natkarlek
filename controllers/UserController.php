@@ -4,14 +4,14 @@ class UserController
 {
     public function login()
     {
-        view( 'user/login' );
+        view( 'login/view' );
     }
 
     public function doLogin()
     {
         if( !User::login( $_POST ) )
         {
-            view( 'user/login', array(
+            view( 'login/view', array(
                 'error' => 1,
                 'message' => "Användarnamnet eller lösenordet är fel!"
             )  );

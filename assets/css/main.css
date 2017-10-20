@@ -1,34 +1,134 @@
-*{
-    margin:0;
-    padding:0;
-    font-family:sans-serif;
-    text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
-body{
-    background-color:#ecf0f1;
+.bg {
+  background-color: #c0392b;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  z-index: 0;
 }
-.login-wrapper{
-    width:60%;
-    margin:0 auto;
+.bg-2 {
+  background: white;
+  position: absolute;
+  top: 80%;
+  height: 80%;
+  width: 100%;
 }
-.hero, .slideshow, .comment{
-    height:90vh;
-    background-attachment: fixed;
-    background:#e74c3c;
-    color:white;
+.heart {
+  position: absolute;
+  font-size: 150px;
+  top: calc(35% - 150px);
+  left: calc(50% - 150px);
+  color: white;
 }
-.slideshow, .comment{
-    background:white;
-    color:#e74c3c;
+
+.buttons {
+  width: 100%;
+  height: 250px;
+  top: calc(80% - 250px);
+  background: #e74c3c;
+  position: absolute;
 }
-.slideshow, .comment{
-    height:70vh;
+.one {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 4px solid white;
+  border-radius: 50%;
+  top: 10px;
+  left: calc(30% - 80px);
+  transition: all 200ms ease-in-out;
 }
-.hero h1, .slideshow h1, .comment h1{
-    font-size: 70px;
-    padding-top:200px;
+.two {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 4px solid white;
+  border-radius: 50%;
+  left: calc(45% - 80px);
+  top: 10px;
+  transition: all 200ms ease-in-out;
 }
-.hero h2, .slideshow h2, .comment h2{
-    color:#F06292;
-    font-size: 30px;
+.three {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 4px solid white;
+  border-radius: 50%;
+  right: calc(30% - 80px);
+  top: 10px;
+  transition: all 200ms ease-in-out;
 }
+.four {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 4px solid white;
+  border-radius: 50%;
+  right: calc(45% - 80px);
+  top: 10px;
+  transition: all 200ms ease-in-out;
+}
+.buttons :hover {
+  width: 100px;
+  height: 100px;
+}
+.kommentar {
+  position: absolute;
+  top: 800px;
+  left: calc(50% - 200px);
+}
+.kommentar textarea {
+  width: 400px;
+  height: 400px;
+  outline: none;
+  font-size: 20px;
+  color: grey;
+  overflow: auto;
+  resize: none;
+  border: 2px solid #c0392b;
+  border-radius: 6px;
+  padding: 10px;
+  letter-spacing: 2px;
+}
+.kommentar input[type=submit] {
+  width: 424px;
+  height: 50px;
+  background-color: Transparent;
+  border: none;
+  border: 2px solid #c0392b;
+  border-radius: 6px;
+  margin-top: 5px;
+  transition: all 200ms ease-in-out;
+}
+.kommentar input:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

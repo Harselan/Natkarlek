@@ -1,13 +1,17 @@
-<div class="slideshow">
-    <h1>Här finns det slideshows</h1>
-    <div class="container">
+    <a href="/logout">Logga ut</a>
+    <div class="bg"></div>
+    <div class="heart"> < 3 </div>
 
+    <div class="buttons">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+      <div class="four"></div>
     </div>
-</div>
-<div class="comment">
-    <h1>Kommentera</h1>
-    <form action="/comment/add" method="post">
-        <textarea name="comment" placeholder="Kommentar:"></textarea>
-        <input type="submit" value="Skriv kommentar">
+
+    <div class="bg-2"></div>
+
+    <form class="kommentar" action="/" method="post">
+      <textarea name="name" rows="15" cols="60"></textarea><br>
+      <input type="submit" name="" value="Sprid Kärleken">
     </form>
-</div>
