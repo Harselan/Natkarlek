@@ -1,4 +1,3 @@
 <?php
-Route::get('/',                                         'DashboardController@main');
-Route::get('/logout',                                   'LoginController@logout');
+Route::get('/', 'DashboardController@main');
 ?>

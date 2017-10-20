@@ -2,10 +2,11 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-        <title>Utvecklingssamtal 2.0</title>
+        <title>Nätkärlek</title>
     </head>
     <body>
         <div class="wrapper">
-            <ul class="nav">
-                <li><a href="/">Hem</a></li>
-            </ul>
+            <div class="hero">
+                <h1>Solna Gymnasium</h1>
+                <h2>#Nätkärlek</h2>
+            </div>
