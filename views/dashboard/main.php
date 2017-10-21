@@ -11,7 +11,7 @@
 
     <div class="bg-2"></div>
 
-    <form class="kommentar" action="/" method="post">
-      <textarea name="name" rows="15" cols="60"></textarea><br>
+    <form class="kommentar" action="/message/add" method="post">
+      <textarea name="text" rows="15" cols="60"></textarea><br>
       <input type="submit" name="" value="Sprid Kärleken">
     </form>
