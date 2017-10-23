@@ -1,0 +1,22 @@
+.popup{
+    width:60%;
+    margin:0 auto;
+    background:#e74c3c;
+    padding:50px;
+}
+table{
+    width:100%;
+    color:white;
+    font-weight: bold;
+    padding:0;
+    text-align: center;
+}
+.popup h2{
+    color:white;
+    text-align: center;
+    border-bottom: 0.07px solid white;
+}
+.popup  table tr td a{
+    text-decoration: none;
+    color white;
+}

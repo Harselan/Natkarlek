@@ -30,5 +30,6 @@ class MessageController
             'inbox' => Message::get_inbox( $id )
         ) );
     }
+
 }
 ?>

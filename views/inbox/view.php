@@ -1,15 +1,14 @@
-<table>
-<tr>
-    <td>#</td>
-    <td>Meddelande</td>
-</tr>
-<?php foreach( $inbox as $inbox ): ?>
+<div class="popup">
+    <h2>Inkorg</h2>
+    <table>
+    <?php foreach( $inbox as $inbox ): ?>
 
-<tr>
-    <td><?=$inbox['id']?></td>
-    <td><?=$inbox['text']?></td>
-</tr>
+    <tr>
+        <td><?=$inbox['text']?></td>
+        <td><a href="inbox/<?= $inbox['id'] ?>/delete">X</a></td>
+    </tr>
 
-<?php endforeach; ?>
+    <?php endforeach; ?>
 
-</table>
+    </table>
+</div>
