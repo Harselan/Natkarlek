@@ -16,3 +16,14 @@ function Scroll() {
   }
 }
 window.addEventListener("scroll", Scroll);
+
+function popup() {
+    var popup = document.getElementById("popupContent");
+    popup.style.visibility='visible';
+}
+
+function popdown()
+{
+    var popup = document.getElementById("popupContent");
+    popup.style.visibility='hidden';
+}
