@@ -4,7 +4,6 @@
         <script src="p5.js"></script>
         <script src="assets/js/jquery-3.2.1.js"></script>
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-        <link rel="stylesheet" type="text/css" href="/assets/css/haralds.css">
         <title>FriendNet</title>
     </head>
      <body onload="heart()">

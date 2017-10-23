@@ -18,10 +18,26 @@
 </div>
 
 <div class="buttons">
-  <div class="one"></div>
+  <div class="one" onclick="popup()"></div>
   <div class="two"></div>
   <a href="/logout"><div class="three"><img src="assets/images/logout.png" alt="logout"></div></a>
   <div class="four"></div>
+</div>
+
+<div class="popup" id="popupContent">
+    <span onclick="popdown()" class="popdown">X</span>
+    <h2>Inkorg</h2>
+    <table>
+    <?php foreach( $inbox as $inbox ): ?>
+
+    <tr>
+        <td><?=$inbox['text']?></td>
+        <td><a href="inbox/<?= $inbox['id'] ?>/delete">X</a></td>
+    </tr>
+
+    <?php endforeach; ?>
+
+    </table>
 </div>
 
 <h1>Skriv ett fint meddelande</h1>

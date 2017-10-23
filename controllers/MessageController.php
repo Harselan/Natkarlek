@@ -19,17 +19,5 @@ class MessageController
             ) );
         }
     }
-
-    public function viewInbox( $id = 0 )
-    {
-        if( $id == 0 )
-        {
-            $id = $_SESSION['user_id'];
-        }
-        view( 'inbox/view', array(
-            'inbox' => Message::get_inbox( $id )
-        ) );
-    }
-
 }
 ?>

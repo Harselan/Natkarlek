@@ -205,26 +205,35 @@ p {
   font-size: 20px;
   font-weight: lighter;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*Det som står nedan har Harald skrivit, detta får granskas för ytterliggare ändringar och effektivitet*/
+.popup{
+    text-align: center;
+    width:60%;
+    height:80vh;
+    padding:50px;
+    z-index: 100;
+    margin:0 auto;
+    top:50px;
+    left:calc(20% - 50px);
+    background:#e74c3c;
+    color:white;
+    position:fixed;
+    display:inline-block;
+    visibility: hidden;
+}
+table{
+    width:100%;
+    font-weight: bold;
+}
+.popup h2{
+    border-bottom: 0.07px solid white;
+}
+.popup  table tr td a{
+    text-decoration: none;
+}
+.popdown{
+    float:right;
+    font-weight: bolder;
+    font-size: 30px;
+}
 /**/
