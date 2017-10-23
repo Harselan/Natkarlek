@@ -1,4 +1,3 @@
-    <a href="/logout">Logga ut</a>
     <div class="bg"></div>
     <div class="bg-2"></div>
 
