@@ -1,5 +1,7 @@
-    <div class="bg"></div>
-    <div class="bg-2"></div>
+<div class="bg" id="bg"></div>
+<div class="bg-2"></div>
+<div class="bg-btns"></div>
+<div class="bg-3"></div>
 
 <div class="heart">
   <div id="leftH"></div>
@@ -7,6 +9,9 @@
   <div id="rightH"></div>
 </div>
 
+<div class="head">
+  <p>#NÄTKÄRLEK</p>
+</div>
 
 <div id="nav">
   <ul>
@@ -20,8 +25,8 @@
 <div class="buttons">
   <div class="one" onclick="popup()"></div>
   <div class="two"></div>
-  <a href="/logout"><div class="three"><img src="assets/images/logout.png" alt="logout"></div></a>
-  <div class="four"></div>
+  <a href="/omoss"><div class="three"><img src="assets/images/om.png" alt="Om oss"></div></a>
+  <a href="/logout"><div class="four"><img src="assets/images/logout.png" alt="logout"></div></a>
 </div>
 
 <div class="popup" id="popupContent">
