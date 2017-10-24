@@ -13,10 +13,7 @@ class MessageController
         }
         else
         {
-            view( 'dashboard/main', array(
-                'success' => 1,
-                'message' => 'Gratulerar du har nu spridit kärleken'
-            ) );
+            redirect("/");
         }
     }
 }
