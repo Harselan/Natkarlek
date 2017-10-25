@@ -24,7 +24,7 @@
 
 <div class="buttons">
   <a href="#"><div class="one" onclick="popup()"><img src="assets/images/message.png" alt="Inkorg"></div></a>
-  <a href="#"><div class="two"><img src="assets/images/profile.png" alt="Profil"></div></a>
+  <a href="/profile"><div class="two"><img src="assets/images/profile.png" alt="Profil"></div></a>
   <a href="/omoss"><div class="three"><img src="assets/images/om.png" alt="Om oss"></div></a>
   <a href="/logout"><div class="four"><img src="assets/images/logout.png" alt="logout"></div></a>
 </div>
