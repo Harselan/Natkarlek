@@ -6,14 +6,14 @@
     <script src="../resources/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="../css/main.css">
   </head>
-  <body onload="heart(); swapImage()">
+  <body onload="heart();">
 
     <div class="bg" id="bg"></div>
     <div class="bg-2"></div>
     <div class="bg-btns"></div>
     <div class="bg-3"></div>
 
-    <div class="heart">
+    <div id="heart">
       <div id="leftH"></div>
       <div id="midH"></div>
       <div id="rightH"></div>
@@ -32,10 +32,9 @@
       </ul>
     </div>
 
-
     <div class="buttons">
-      <div class="one"></div>
-      <div class="two"></div>
+      <a href="#"><div class="one"><img src="../images/message.png" alt="meddelande"></div></a>
+      <a href="#"><div class="two"><img src="../images/profile.png" alt="profile"></div></a>
       <a href="../html/omoss.html"><div class="three"><img src="../images/om.png" alt="Om oss"></div></a>
       <a href="/logout"><div class="four"><img src="../images/logoutWhite.png" alt="logout"></div></a>
     </div>
@@ -47,8 +46,6 @@
       <textarea name="name" rows="15" cols="60" placeholder="Skriv här..."></textarea><br>
       <input type="submit" name="" value="Sprid Kärleken">
     </form>
-
-    <img class="slideshow" name="slide" src="http://allrandall.com/DeskSpace/Desk_Space_W_11.jpg" />
 
 
     <script src="../scripts/main.js"></script>
