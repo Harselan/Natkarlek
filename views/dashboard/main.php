@@ -3,7 +3,7 @@
 <div class="bg-btns"></div>
 <div class="bg-3"></div>
 
-<div class="heart">
+<div id="heart">
   <div id="leftH"></div>
   <div id="midH"></div>
   <div id="rightH"></div>
@@ -23,8 +23,8 @@
 </div>
 
 <div class="buttons">
-  <div class="one" onclick="popup()"></div>
-  <div class="two"></div>
+  <a href="#"><div class="one" onclick="popup()"><img src="assets/images/message.png" alt="Inkorg"></div></a>
+  <a href="#"><div class="two"><img src="assets/images/profile.png" alt="Profil"></div></a>
   <a href="/omoss"><div class="three"><img src="assets/images/om.png" alt="Om oss"></div></a>
   <a href="/logout"><div class="four"><img src="assets/images/logout.png" alt="logout"></div></a>
 </div>
