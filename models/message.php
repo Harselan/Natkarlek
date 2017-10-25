@@ -34,7 +34,23 @@ class Message
             ':user_id' => $_SESSION['user_id']
         ) );
 
-        return DB::getConnection()->lastInsertId();
+        $id = DB::getConnection()->lastInsertId();
+
+        $amount = DB::getConnection()->prepare( "SELECT COUNT(id) AS amount FROM users" );
+        $amount->execute();
+        do
+        {
+            $receiver = rand( 1, $amount->fetchAll()[0]['amount'] );
+        }
+        while( $receiver == $_SESSION['user_id'] );
+
+        $create = DB::getConnection()->prepare( "INSERT INTO inbox (user_id, message_id) VALUES (:user_id, :message_id)" );
+        $create->execute( array(
+            ':user_id' => $receiver,
+            ':message_id' => $id
+        ) );
+
+        return $id;
     }
 }
 
