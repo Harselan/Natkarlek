@@ -13,6 +13,35 @@ class User
         return $get->fetchAll()[0];
     }
 
+    public static function edit( $post, $id )
+    {
+        if( !check( $post, [ 'name' ] ) )
+        {
+            return false;
+        }
+
+        if( !check( $post, [ 'password' ] ) )
+        {
+            $update = DB::getConnection()->prepare( "UPDATE users SET name = :name WHERE id = :id" );
+            $update->execute( array(
+                ':name' => $post['name'],
+                ':id'   => $id
+            ) );
+        }
+        else
+        {
+            $update = DB::getConnection()->prepare( "UPDATE users SET name = :name, password = :password WHERE id = :id" );
+            $update->execute( array(
+                ':name'     => $post['name'],
+                ':password' => password_hash( $post['password'], PASSWORD_DEFAULT ),
+                ':id'       => $id
+            ) );
+        }
+
+        return true;
+
+    }
+
     public static function login( $post )
     {
 

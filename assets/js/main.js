@@ -29,3 +29,14 @@ function popdown()
     var popup = document.getElementById("popupContent");
     popup.style.visibility='hidden';
 }
+
+function profilePopup() {
+    var popup = document.getElementById("popupProfile");
+    popup.style.visibility='visible';
+}
+
+function profilePopdown()
+{
+    var popup = document.getElementById("popupProfile");
+    popup.style.visibility='hidden';
+}

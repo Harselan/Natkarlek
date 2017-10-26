@@ -6,7 +6,7 @@ if( User::loggedIn() )
     Route::get('/logout',               'LoginController@logout');
 
     Route::post('/message/add',         'MessageController@create');
-    Route::get('/profile',              'UserController@view');
+    Route::post('/profile/edit',         'UserController@edit');
 }
 else
 {
