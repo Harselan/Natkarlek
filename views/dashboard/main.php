@@ -30,7 +30,7 @@
 </div>
 
 <div class="popup" id="popupContent">
-    <span onclick="popdown()" class="popdown">X</span>
+    <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="popdown()">
     <h2>Inkorg</h2>
     <table>
     <?php foreach( $inbox as $inbox ): ?>
@@ -46,7 +46,7 @@
 </div>
 
 <div class="popup" id="popupProfile">
-    <span onclick="profilePopdown()" class="popdown">X</span>
+    <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="profilePopdown()">
     <h2>Profil</h2>
     <form action="/profile/edit" method="post">
         <h3>Namn</h3><input type="text" name="name" value="<?=$profile['name']?>" placeholder="Namn:">

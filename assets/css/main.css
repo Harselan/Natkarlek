@@ -257,7 +257,10 @@ table{
 }
 .popdown{
     float:right;
-    font-weight: bolder;
-    font-size: 30px;
+    width:35px;
+    margin-bottom:10px;
+}
+.popdown:hover{
+    cursor:pointer;
 }
 /**/

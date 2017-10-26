@@ -40,3 +40,19 @@ function profilePopdown()
     var popup = document.getElementById("popupProfile");
     popup.style.visibility='hidden';
 }
+
+// if( $( "#popupProfile" ).is( ":visible" ) || $( "#popupContent" ).is( ":visible" )  )
+// {
+//     $('html').click(function() {
+//         popdown();
+//         profilePopdown();
+//     });
+//
+//     $( '#popupContent' ).click( function( event ){
+//         event.stopPropagation();
+//     } );
+//
+//     $( '#popupProfile' ).click( function( event ){
+//         event.stopPropagation();
+//     } );
+// }
