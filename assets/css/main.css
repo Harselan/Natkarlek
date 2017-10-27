@@ -33,12 +33,13 @@ body {
   width: 100%;
   background: #e74c3c;
 }
-.heart {
+#heart {
   position: absolute;
   top: 200px;
   left: calc(50% - 50px);
+  transition: all 1000ms ease-in-out;
 }
-.head p {
+#head p {
   position: absolute;
   font: 40px;
 }
@@ -103,7 +104,6 @@ body {
   width: 100%;
   position: absolute;
   z-index: 1;
-  top
 }
 .one {
   width: 80px;
@@ -153,6 +153,20 @@ body {
   height: 50px;
 }
 .three img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+}
+.two img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+}
+.one img {
   position: relative;
   width: 100px;
   height: 100px;
@@ -215,14 +229,6 @@ p {
   background-color: #c0392b;
   color: white;
 }
-.slideshow {
-  width: 50%;
-  height: auto;
-  position: absolute;
-  top: 1573px;
-  left: 25%;
-  border-radius: 4px;
-}
 /*Det som står nedan har Harald skrivit, detta får granskas för ytterliggare ändringar och effektivitet*/
 .popup{
     text-align: center;
@@ -251,7 +257,10 @@ table{
 }
 .popdown{
     float:right;
-    font-weight: bolder;
-    font-size: 30px;
+    width:35px;
+    margin-bottom:10px;
+}
+.popdown:hover{
+    cursor:pointer;
 }
 /**/

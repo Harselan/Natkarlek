@@ -42,7 +42,7 @@ class Message
         {
             $receiver = rand( 1, $amount->fetchAll()[0]['amount'] );
         }
-        while( $receiver == $_SESSION['user_id'] );
+        while( $receiver == $_SESSION['user_id'] || $receiver == 0 );
 
         $create = DB::getConnection()->prepare( "INSERT INTO inbox (user_id, message_id) VALUES (:user_id, :message_id)" );
         $create->execute( array(
