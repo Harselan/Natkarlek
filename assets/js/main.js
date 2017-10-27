@@ -2,13 +2,14 @@ var a = document.getElementById("rightH");
 var b = document.getElementById("midH");
 var c = document.getElementById("leftH");
 var d = document.getElementById("heart");
+
 function heart() {
-    a, b, c = true;
-    d = false;
+  a, b, c = true;
+  d = false;
 
   if (a, b, c == true) {
-    document.getElementById("rightH").style.cssText="top: -38px; left: 38px";
-    document.getElementById("midH").style.cssText="top: 0px; left: 0px";
+    a.style.cssText="top: -38px; left: 38px";
+    b.style.cssText="top: 0px; left: 0px";
     document.getElementById("leftH").style.cssText="top: -38px; left: -38px;";
     a, b, c = false;
   }
@@ -36,58 +37,46 @@ function timeoutSmall() {
     a, b, c, d = false;
 
   }
-  setTimeout(timeoutBig, 1400);
+  setTimeout(timeoutBig, 1000);
 }
-// function Scroll() {
-//   var top = document.getElementById('');
-//   var ypos = window.pageYOffset;
-//
-//   if (ypos > 540) {
-//     top.style.cssText="background: green";
-//   }
-//   else {
-//     top.style.cssText ="background: red";
-//   }
-// }
-// window.addEventListener("scroll", Scroll);
+
+//##### POP #####
+function popUp() {
+  document.getElementById("popupWin").style.cssText="display: inherit";
+}
+
+function popDown() {
+  document.getElementById("popupWin").style.cssText="display: none";
+}
+
+function profilePopUp() {
+  document.getElementById("profilePopUp").style.cssText="display: inherit";
+}
+
+function profilePopDown() {
+  document.getElementById("profilePopUp").style.cssText="display: none";
+}
+
+//click outside element
+window.addEventListener('mouseup', function(event){
+	var box = document.getElementById("popupWin");
+	if (event.target != box && event.target.parentNode != box){
+        box.style.display = 'none';
+    }
+});
+
+
+function Scroll() {
+  var top = document.getElementById("buttons");
+  var ypos = window.pageYOffset;
+
+  if (ypos > 545) {
+    top.style.cssText="position: fixed; top: 0px;";
+  }
+  else {
+    top.style.cssText ="position: absolute";
+  }
+}
+window.addEventListener("scroll", Scroll);
 
 //################ SLIDE ####################
-
-
-function popup() {
-    var popup = document.getElementById("popupContent");
-    popup.style.visibility='visible';
-}
-
-function popdown()
-{
-    var popup = document.getElementById("popupContent");
-    popup.style.visibility='hidden';
-}
-
-function profilePopup() {
-    var popup = document.getElementById("popupProfile");
-    popup.style.visibility='visible';
-}
-
-function profilePopdown()
-{
-    var popup = document.getElementById("popupProfile");
-    popup.style.visibility='hidden';
-}
-
-// if( $( "#popupProfile" ).is( ":visible" ) || $( "#popupContent" ).is( ":visible" )  )
-// {
-//     $('html').click(function() {
-//         popdown();
-//         profilePopdown();
-//     });
-//
-//     $( '#popupContent' ).click( function( event ){
-//         event.stopPropagation();
-//     } );
-//
-//     $( '#popupProfile' ).click( function( event ){
-//         event.stopPropagation();
-//     } );
-// }

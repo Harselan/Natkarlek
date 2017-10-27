@@ -13,40 +13,31 @@
   <p>#NÄTKÄRLEK</p>
 </div>
 
-<div id="nav">
-  <ul>
-    <li><a href="#">Random</a></li>
-    <li><a href="#">Random</a></li>
-    <li><a href="#">Random</a></li>
-    <li><a href="#">Random</a></li>
-  </ul>
-</div>
-
-<div class="buttons">
-  <a href="#"><div class="one" onclick="popup()"><img src="assets/images/message.png" alt="Inkorg"></div></a>
-  <a href="#"><div class="two" onclick="profilePopup()"><img src="assets/images/profile.png" alt="Profil"></div></a>
+<div id="buttons">
+  <a onclick="popUp();" href="#"><div class="one"><img src="assets/images/message.png" alt="Inkorg"></div></a>
+  <a onclick="profilePopUp();"><div class="two"><img src="assets/images/profile.png" alt="Profil"></div></a>
   <a href="/omoss"><div class="three"><img src="assets/images/om.png" alt="Om oss"></div></a>
-  <a href="/logout"><div class="four"><img src="assets/images/logout.png" alt="logout"></div></a>
+  <a href="/logout"><div id="four"><img src="assets/images/logout.png" alt="logout"></div></a>
 </div>
 
-<div class="popup" id="popupContent">
-    <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="popdown()">
-    <h2>Inkorg</h2>
-    <table>
-    <?php foreach( $inbox as $inbox ): ?>
+<div id="popupWin">
+  <a onclick="popDown()"><img src="assets/images/cross.png" alt="Stäng" class="popdown"></a>
+  <h2>Inkorg</h2>
+  <table>
+  <?php foreach( $inbox as $inbox ): ?>
 
-    <tr>
-        <td><?=$inbox['text']?></td>
-        <td><a href="inbox/<?= $inbox['id'] ?>/delete">X</a></td>
-    </tr>
+  <tr>
+      <td><?=$inbox['text']?></td>
+      <td><a href="inbox/<?= $inbox['id'] ?>/delete">X</a></td>
+  </tr>
 
-    <?php endforeach; ?>
+  <?php endforeach; ?>
 
-    </table>
+  </table>
 </div>
 
-<div class="popup" id="popupProfile">
-    <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="profilePopdown()">
+<div class="popup" id="profilePopUp">
+    <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="profilePopDown()">
     <h2>Profil</h2>
     <form action="/profile/edit" method="post">
         <h3>Namn</h3><input type="text" name="name" value="<?=$profile['name']?>" placeholder="Namn:">
