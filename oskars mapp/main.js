@@ -3,14 +3,13 @@ var b = document.getElementById("midH");
 var c = document.getElementById("leftH");
 var d = document.getElementById("heart");
 
-
 function heart() {
   a, b, c = true;
   d = false;
 
   if (a, b, c == true) {
-    document.getElementById("rightH").style.cssText="top: -38px; left: 38px";
-    document.getElementById("midH").style.cssText="top: 0px; left: 0px";
+    a.style.cssText="top: -38px; left: 38px";
+    b.style.cssText="top: 0px; left: 0px";
     document.getElementById("leftH").style.cssText="top: -38px; left: -38px;";
     a, b, c = false;
   }
@@ -38,24 +37,34 @@ function timeoutSmall() {
     a, b, c, d = false;
 
   }
+  setTimeout(timeoutBig, 1000);
 }
 
-
-
-
-
-
+//##### POP #####
+function popUp() {
+  document.getElementById("popupWin").style.cssText="display: inherit";
+}
+function popDown() {
+  document.getElementById("popupWin").style.cssText="display: none";
+}
+//click outside element
+window.addEventListener('mouseup', function(event){
+	var box = document.getElementById("popupWin");
+	if (event.target != box && event.target.parentNode != box){
+        box.style.display = 'none';
+    }
+});
 
 
 function Scroll() {
-  var top = document.getElementsByClassName("buttons");
+  var top = document.getElementById("buttons");
   var ypos = window.pageYOffset;
 
-  if (ypos > 540) {
-    top.style.cssText="background: green";
+  if (ypos > 545) {
+    top.style.cssText="position: fixed; top: 0px;";
   }
   else {
-    top.style.cssText ="background: red";
+    top.style.cssText ="position: absolute";
   }
 }
 window.addEventListener("scroll", Scroll);

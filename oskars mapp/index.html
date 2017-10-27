@@ -23,20 +23,27 @@
       <p>#NÄTKÄRLEK</p>
     </div>
 
-    <div id="nav">
-      <ul>
-        <li><a href="#">Random</a></li>
-        <li><a href="#">Random</a></li>
-        <li><a href="#">Random</a></li>
-        <li><a href="#">Random</a></li>
-      </ul>
+    <div id="buttons">
+      <a onclick="popUp();" href="#">
+        <div class="one">
+          <img src="../images/message.png" alt="meddelande">
+        </div></a>
+      <a href="#">
+        <div class="two">
+          <img src="../images/profile.png" alt="profile">
+        </div></a>
+      <a href="../html/omoss.html">
+        <div class="three">
+          <img src="../images/om.png" alt="Om oss">
+        </div></a>
+      <a href="/logout">
+        <div id="four">
+          <img src="../images/logoutWhite.png" alt="logout">
+        </div></a>
     </div>
 
-    <div class="buttons">
-      <a href="#"><div class="one"><img src="../images/message.png" alt="meddelande"></div></a>
-      <a href="#"><div class="two"><img src="../images/profile.png" alt="profile"></div></a>
-      <a href="../html/omoss.html"><div class="three"><img src="../images/om.png" alt="Om oss"></div></a>
-      <a href="/logout"><div class="four"><img src="../images/logoutWhite.png" alt="logout"></div></a>
+    <div id="popupWin">
+      <a onclick="popDown()"><img src="../images/closeWin.png" alt="close window"></a>
     </div>
 
     <h1>Skriv ett fint meddelande</h1>
