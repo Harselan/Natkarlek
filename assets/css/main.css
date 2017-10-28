@@ -157,7 +157,7 @@ body {
   width: 100px;
   height: 100px;
 }
-#popupWin {
+#popupWin, #loginPopup, #profilePopup{
   width: 75%;
   height: 600px;
   position: fixed;
@@ -167,7 +167,6 @@ body {
   z-index: 10;
   left: 12.5%;
   top: calc(50% - 300px);
-  opacity: 0.9;
   display: none;
 }
 #popupWin img {
@@ -215,49 +214,56 @@ p {
 .kommentar input[type=submit] {
   width: 424px;
   height: 50px;
-  background-color: Transparent;
+  background-color: #e74c3c;
+  color:white;
+  font-size: 20px;
   border: none;
-  border: 2px solid #c0392b;
   border-radius: 6px;
   margin-top: 5px;
   transition: all 200ms ease-in-out;
 }
 .kommentar input:hover {
-  background-color: #c0392b;
-  color: white;
+  /*background-color: #c0392b;
+  color: white;*/
 }
 /*Det som står nedan har Harald skrivit, detta får granskas för ytterliggare ändringar och effektivitet*/
-.popup{
-    text-align: center;
-    width:60%;
-    height:80vh;
-    padding:50px;
-    z-index: 100;
-    margin:0 auto;
-    top:50px;
-    left:calc(20% - 50px);
-    background:#e74c3c;
-    color:white;
-    position:fixed;
-    display:inline-block;
-    visibility: hidden;
-}
 table{
     width:100%;
     font-weight: bold;
 }
-.popup h2{
-    border-bottom: 0.07px solid white;
+.login-wrapper{
+    width:50%;
+    margin: 0 auto;
 }
-.popup  table tr td a{
-    text-decoration: none;
+.login-wrapper h2{
+    text-align: center;
+    display: block;
+    color: #e74c3c;
 }
-.popdown{
-    float:right;
-    width:35px;
-    margin-bottom:10px;
+.login-wrapper input{
+    margin:0 auto;
 }
-.popdown:hover{
-    cursor:pointer;
+.login-wrapper input::placeholder, .login-wrapper input{
+    color: #e74c3c;
+    font-size: 17px;
+    font-weight: bold;
+}
+.login-wrapper input[type="text"], .login-wrapper input[type="password"]{
+    width:90%;
+    border:2px solid #e74c3c;
+    border-radius: 10px;
+    padding:10px;
+    margin:10px;
+}
+.login-wrapper input[type="submit"]{
+    width:calc( 92.5% + 4px );
+    border:2px solid #e74c3c;
+    border-radius: 10px;
+    padding:10px;
+    margin:10px;
+    background: #e74c3c;
+    color:white;
+    font-size:17px;
+    font-weight: bolder;
 }
 /**/

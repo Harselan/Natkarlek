@@ -17,7 +17,11 @@
   <a onclick="popUp();" href="#"><div class="one"><img src="assets/images/message.png" alt="Inkorg"></div></a>
   <a onclick="profilePopUp();"><div class="two"><img src="assets/images/profile.png" alt="Profil"></div></a>
   <a href="/omoss"><div class="three"><img src="assets/images/om.png" alt="Om oss"></div></a>
+  <?php if( isset( $_SESSION['user_id'] ) ): ?>
   <a href="/logout"><div id="four"><img src="assets/images/logout.png" alt="logout"></div></a>
+  <?php else: ?>
+  <div id="four"><a onclick="loginPopup();"><img src="assets/images/login.png" alt="logga in"></a></div>
+  <?php endif; ?>
 </div>
 
 <div id="popupWin">
@@ -34,9 +38,10 @@
   <?php endforeach; ?>
 
   </table>
+
 </div>
 
-<div class="popup" id="profilePopUp">
+<div id="profilePopUp">
     <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="profilePopDown()">
     <h2>Profil</h2>
     <form action="/profile/edit" method="post">
@@ -45,6 +50,17 @@
         <h3>Lösenord</h3><input type="password" name="password" placeholder="Skriv för att ändra lösenord:">
         <input type="submit" name="" value="Spara">
     </form>
+</div>
+<div id="loginPopup">
+    <img src="assets/images/cross.png" alt="Stäng" class="loginPopdown" onclick="profilePopDown()">
+    <div class="login-wrapper">
+        <h2>Logga in</h2>
+        <form action="/" method="post">
+            <input type="text" name="name" placeholder="Namn:">
+            <input type="password" name="password" placeholder="Lösenord:">
+            <input type="submit" value="Logga in">
+        </form>
+    </div>
 </div>
 
 <h1>Skriv ett fint meddelande</h1>

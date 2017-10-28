@@ -9,23 +9,14 @@ class LoginController
 
     public function doLogin()
     {
-        if( !User::login( $_POST ) )
-        {
-            view( 'login/view', array(
-                'error' => 1,
-                'message' => "Användarnamnet eller lösenordet är fel!"
-            )  );
-        }
-        else
-        {
-            view( 'dashboard/main' );
-        }
+        User::login( $_POST );
+        redirect( '/' );
     }
 
     public function logout()
     {
         User::logout();
-        redirect('/');
+        redirect( '/' );
     }
 }
 

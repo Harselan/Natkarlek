@@ -57,6 +57,14 @@ function profilePopDown() {
   document.getElementById("profilePopUp").style.cssText="display: none";
 }
 
+function loginPopup() {
+  document.getElementById("loginPopup").style.cssText="display: inherit";
+}
+
+function loginPopdown() {
+  document.getElementById("loginPopup").style.cssText="display: none";
+}
+
 //click outside element
 window.addEventListener('mouseup', function(event){
 	var box = document.getElementById("popupWin");
