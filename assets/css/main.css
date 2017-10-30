@@ -157,7 +157,7 @@ body {
   width: 100px;
   height: 100px;
 }
-#popupWin, #loginPopup, #profilePopup{
+#messagePopup, #loginPopup, #profilePopup{
   width: 75%;
   height: 600px;
   position: fixed;
@@ -169,7 +169,7 @@ body {
   top: calc(50% - 300px);
   display: none;
 }
-#popupWin img {
+#messagePopup img, #loginPopup img, #profilePopup img {
   float: right;
   width: 80px;
   height: 80px;

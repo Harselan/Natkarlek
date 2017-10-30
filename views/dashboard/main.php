@@ -15,17 +15,17 @@
 
 <div id="buttons">
   <a onclick="popUp();" href="#"><div class="one"><img src="assets/images/message.png" alt="Inkorg"></div></a>
-  <a onclick="profilePopUp();"><div class="two"><img src="assets/images/profile.png" alt="Profil"></div></a>
+  <a onclick="profilePopup();"><div class="two"><img src="assets/images/profile.png" alt="Profil"></div></a>
   <a href="/omoss"><div class="three"><img src="assets/images/om.png" alt="Om oss"></div></a>
   <?php if( isset( $_SESSION['user_id'] ) ): ?>
   <a href="/logout"><div id="four"><img src="assets/images/logout.png" alt="logout"></div></a>
   <?php else: ?>
-  <div id="four"><a onclick="loginPopup();"><img src="assets/images/login.png" alt="logga in"></a></div>
+  <div id="four"><a onclick="loginPopup();"><img src="assets/images/login.png" alt="logga in" style="margin-left:-10px;"></a></div>
   <?php endif; ?>
 </div>
 
-<div id="popupWin">
-  <a onclick="popDown()"><img src="assets/images/cross.png" alt="Stäng" class="popdown"></a>
+<div id="messagePopup">
+  <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="popDown()">
   <h2>Inkorg</h2>
   <table>
   <?php foreach( $inbox as $inbox ): ?>
@@ -41,8 +41,8 @@
 
 </div>
 
-<div id="profilePopUp">
-    <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="profilePopDown()">
+<div id="profilePopup">
+    <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="profilePopdown()">
     <h2>Profil</h2>
     <form action="/profile/edit" method="post">
         <h3>Namn</h3><input type="text" name="name" value="<?=$profile['name']?>" placeholder="Namn:">
@@ -52,13 +52,13 @@
     </form>
 </div>
 <div id="loginPopup">
-    <img src="assets/images/cross.png" alt="Stäng" class="loginPopdown" onclick="profilePopDown()">
-    <div class="login-wrapper">
-        <h2>Logga in</h2>
-        <form action="/" method="post">
-            <input type="text" name="name" placeholder="Namn:">
-            <input type="password" name="password" placeholder="Lösenord:">
-            <input type="submit" value="Logga in">
+    <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="loginPopdown()">
+    <div id="login" class="login-wrapper">
+        <h2 id="header">Logga in</h2>
+        <form id="login-form" action="/" method="post" class="loginPopup">
+            <input id="input1" class="loginPopup inputs" type="text" name="name" placeholder="Namn:">
+            <input id="input2" class="loginPopup inputs" type="password" name="password" placeholder="Lösenord:">
+            <input id="input3" class="loginPopup inputs" type="submit" value="Logga in">
         </form>
     </div>
 </div>

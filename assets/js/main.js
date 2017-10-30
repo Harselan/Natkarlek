@@ -42,19 +42,19 @@ function timeoutSmall() {
 
 //##### POP #####
 function popUp() {
-  document.getElementById("popupWin").style.cssText="display: inherit";
+  document.getElementById("messagePopup").style.cssText="display: inherit";
 }
 
 function popDown() {
-  document.getElementById("popupWin").style.cssText="display: none";
+  document.getElementById("messagePopup").style.cssText="display: none";
 }
 
-function profilePopUp() {
-  document.getElementById("profilePopUp").style.cssText="display: inherit";
+function profilePopup() {
+  document.getElementById("profilePopup").style.cssText="display: inherit";
 }
 
-function profilePopDown() {
-  document.getElementById("profilePopUp").style.cssText="display: none";
+function profilePopdown() {
+  document.getElementById("profilePopup").style.cssText="display: none";
 }
 
 function loginPopup() {
@@ -65,14 +65,18 @@ function loginPopdown() {
   document.getElementById("loginPopup").style.cssText="display: none";
 }
 
-//click outside element
-window.addEventListener('mouseup', function(event){
-	var box = document.getElementById("popupWin");
-	if (event.target != box && event.target.parentNode != box){
-        box.style.display = 'none';
+$( document ).mouseup( function( e )
+{
+    var container = [ $( "#loginPopup" ), $( "#profilePopup" ), $( "#messagePopup" ) ];
+    for( var i = 0; i < container.length; i++ )
+    {
+        // if the target of the click isn't the container nor a descendant of the container
+        if ( !container[i].is( e.target ) && container[i].has( e.target ).length === 0)
+        {
+            container[i].css( "display", "none" );
+        }
     }
 });
-
 
 function Scroll() {
   var top = document.getElementById("buttons");
