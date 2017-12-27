@@ -163,6 +163,8 @@ body {
   position: fixed;
   background: white;
   border: 2px solid #c0392b;
+  overflow-y: scroll;
+  overflow-x: hidden;
   border-radius: 4px;
   z-index: 10;
   left: 12.5%;
@@ -230,6 +232,15 @@ p {
 table{
     width:100%;
     font-weight: bold;
+    word-wrap:break-word;
+}
+tr{
+    width:calc( 97% - 20px );
+    max-width:950px;
+    display:block;
+    border:5px solid #e74c3c;
+    margin:5px;
+    padding:10px;
 }
 .login-wrapper{
     width:50%;
