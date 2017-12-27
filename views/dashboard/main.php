@@ -24,6 +24,7 @@
   <?php endif; ?>
 </div>
 
+<?php if( isset( $_SESSION['user_id'] ) ): ?>
 <div id="messagePopup">
   <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="popDown()">
   <h2>Inkorg</h2>
@@ -31,7 +32,8 @@
   <?php foreach( $inbox as $inbox ): ?>
 
   <tr>
-      <td><?=$inbox['text']?></td>
+      <td class="message"><?=$inbox['text']?></td>
+      <td><a href="report/">Rapportera</a></td>
       <td><a href="inbox/<?= $inbox['id'] ?>/delete">X</a></td>
   </tr>
 
@@ -40,7 +42,12 @@
   </table>
 
 </div>
-
+<?php else: ?>
+<div id="messagePopup">
+    <h2>Du måste logga in för att se meddelanden</h2>
+</div>
+<?php endif; ?>
+<?php if( isset( $_SESSION['user_id'] ) ): ?>
 <div id="profilePopup">
     <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="profilePopdown()">
     <h2>Profil</h2>
@@ -51,6 +58,11 @@
         <input type="submit" name="" value="Spara">
     </form>
 </div>
+<?php else: ?>
+<div id="profilePopup">
+    <h2>Du måste logga in för att se din profil</h2>
+</div>
+<?php endif; ?>
 <div id="loginPopup">
     <img src="assets/images/cross.png" alt="Stäng" class="popdown" onclick="loginPopdown()">
     <div id="login" class="login-wrapper">
