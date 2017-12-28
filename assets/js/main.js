@@ -65,9 +65,17 @@ function loginPopdown() {
   document.getElementById("loginPopup").style.cssText="display: none";
 }
 
+function aboutPopup() {
+  document.getElementById("aboutPopup").style.cssText="display: inherit";
+}
+
+function aboutPopdown() {
+  document.getElementById("aboutPopup").style.cssText="display: none";
+}
+
 $( document ).mouseup( function( e )
 {
-    var container = [ $( "#loginPopup" ), $( "#profilePopup" ), $( "#messagePopup" ) ];
+    var container = [ $( "#loginPopup" ), $( "#profilePopup" ), $( "#messagePopup" ), $( "#aboutPopup" ) ];
     for( var i = 0; i < container.length; i++ )
     {
         // if the target of the click isn't the container nor a descendant of the container
