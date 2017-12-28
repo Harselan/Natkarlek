@@ -4,13 +4,19 @@ class MessageController
     public function create()
     {
         Message::create( $_POST );
-        redirect("/");
+        redirect( "/" );
     }
 
     public function report( $id )
     {
         Message::report( $id );
-        redirect("/");
+        redirect( "/" );
+    }
+
+    public function delete( $id )
+    {
+        Message::delete( $id );
+        redirect( "/" );
     }
 }
 ?>

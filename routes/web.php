@@ -8,5 +8,6 @@ Route::post( '/message/add',         'MessageController@create' );
 Route::post( '/profile/edit',        'UserController@edit' );
 
 Route::get( '/message/{id}/report',  'MessageController@report' );
+Route::get( '/message/{id}/delete',  'MessageController@delete' );
 
 ?>

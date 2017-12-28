@@ -46,9 +46,9 @@
   <tr>
       <td class="message"><?=$inbox['text']?></td>
       <?php if( !$inbox['reported'] ): ?>
-      <td><a href="message/<?=$inbox['id']?>/report/">Rapportera</a></td>
+      <td><a href="message/<?=$inbox['inbox_id']?>/report/">Rapportera</a></td>
       <?php endif; ?>
-      <td><a href="inbox/<?= $inbox['id'] ?>/delete">X</a></td>
+      <td><a href="message/<?=$inbox['inbox_id']?>/delete">X</a></td>
   </tr>
 
   <?php endforeach; ?>
