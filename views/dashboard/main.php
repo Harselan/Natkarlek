@@ -16,12 +16,24 @@
 <div id="buttons">
   <a onclick="popUp();" href="#"><div class="one"><img src="assets/images/message.png" alt="Inkorg"></div></a>
   <a onclick="profilePopup();"><div class="two"><img src="assets/images/profile.png" alt="Profil"></div></a>
-  <a href="/omoss"><div class="three"><img src="assets/images/om.png" alt="Om oss"></div></a>
+  <a onclick="aboutPopup();"><div class="three"><img src="assets/images/om.png" alt="Om oss"></div></a>
   <?php if( isset( $_SESSION['user_id'] ) ): ?>
   <a href="/logout"><div id="four"><img src="assets/images/logout.png" alt="logout"></div></a>
   <?php else: ?>
   <div id="four"><a onclick="loginPopup();"><img src="assets/images/login.png" alt="logga in" style="margin-left:-10px;"></a></div>
   <?php endif; ?>
+</div>
+
+<div id="aboutPopup">
+    <h2>Om oss</h2>
+    <p>Här kommer det att stå en massa saker om näthat och varför vi gjorde denna sida</p>
+    <h2>Vad är näthat?</h2>
+
+    <h2>Vad är nätkärlek?</h2>
+
+    <h2>Vilka gjorde det här?</h2>
+
+    <h2>Varför gjorde vi det här?</h2>
 </div>
 
 <?php if( isset( $_SESSION['user_id'] ) ): ?>
