@@ -9,7 +9,7 @@ class Message
 
     public static function get_inbox( $user_id )
     {
-        $get = DB::getConnection()->prepare( "SELECT messages.id, messages.text, inbox.reported FROM inbox
+        $get = DB::getConnection()->prepare( "SELECT messages.id, messages.text, inbox.reported, inbox.id AS inbox_id FROM inbox
             INNER JOIN messages ON messages.id = inbox.message_id
             INNER JOIN users ON users.id = inbox.user_id
             WHERE users.id = :user_id");
@@ -55,9 +55,11 @@ class Message
 
     public static function report( $id, $reason = 0 )
     {
-        $get = DB::getConnection()->prepare( "SELECT user_id, id FROM inbox WHERE message_id = :message_id LIMIT 1" );
+        $get = DB::getConnection()->prepare( "SELECT messages.user_id, inbox.message_id AS id FROM inbox
+                INNER JOIN messages ON messages.id = inbox.message_id
+                WHERE inbox.id = :id LIMIT 1" );
         $get->execute( array(
-            ':message_id' => $id
+            ':id' => $id
         ) );
 
         $result = $get->fetchAll()[0];
@@ -66,16 +68,26 @@ class Message
         {
             $insert = DB::getConnection()->prepare( "INSERT INTO reports (message_id, user_id) VALUES (:message_id, :user_id)" );
             $insert->execute( array(
-                ':message_id' => $id,
+                ':message_id' => $result['id'],
                 ':user_id'    => $result['user_id']
             ) );
 
             $update = DB::getConnection()->prepare( "UPDATE inbox SET reported = :reported WHERE id = :id" );
             $update->execute( array(
                 ':reported' => true,
-                ':id'       => $result['id']
+                ':id'       => $id
             ) );
         }
+    }
+
+    public static function delete( $id )
+    {
+        $delete = DB::getConnection()->prepare( "DELETE FROM inbox WHERE id = :id" );
+        $delete->execute( array(
+            ':id' => $id
+        ) );
+
+        return true;
     }
 }
 
