@@ -99,4 +99,37 @@ function Scroll() {
 }
 window.addEventListener("scroll", Scroll);
 
+function get_inbox()
+{
+    $.ajax( {
+        url: "localhost/get/inbox",
+        dataType:'JSON',
+        type:"POST",
+        success: function( result )
+        {
+            result = JSON.parse( result );
+            $( "#messagePopup" ).remove();
+            var message = $( "<div id='messagePopup'>" );
+            message.append( "<h2>Inkorg</h2><table>" );
+            for( var i = 0; i < result.length; i++ )
+            {
+                message.append( "<tr><td class='message'>" + result['text'] + "</td>" );
+                if( !result['reported'] )
+                {
+                    message.append( "<td><a href='message/" + result['inbox_id'] + "/report/'>Rapportera</a></td>" );
+                }
+                message.append( "<td><a href='message/" + result['inbox_id'] + "/delete'>X</a></td></tr>" );
+            }
+            message.append( "</table>" );
+        },
+        error: function( jqXHR, textStatus, errorThrown )
+        {
+            // alert( 'error: ' + textStatus + ': ' + errorThrown );
+        }
+    } );
+}
+//Uppdaterar kommentarerna
+setInterval( function(){
+    get_inbox();
+}, 2000 );
 //################ SLIDE ####################

@@ -18,5 +18,12 @@ class MessageController
         Message::delete( $id );
         redirect( "/" );
     }
+
+    public function get()
+    {
+        $result = Message::get_inbox( $_SESSION['user_id'] );
+        echo json_encode( $result );
+        die();
+    }
 }
 ?>
