@@ -10,4 +10,10 @@ Route::post( '/profile/edit',        'UserController@edit' );
 Route::get( '/message/{id}/report',  'MessageController@report' );
 Route::get( '/message/{id}/delete',  'MessageController@delete' );
 
+$state = User::get( $_SESSION['user_id'] )['state_id'];
+
+if( $state == 2 || $state == 1 )
+{
+    Route::get( '/admin',           'DashboardController@admin' );
+}
 ?>

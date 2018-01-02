@@ -9,5 +9,12 @@ class DashboardController
             'profile'   => User::get( $_SESSION['user_id'] )
         ) );
     }
+
+    public function admin()
+    {
+        view( 'dashboard/admin', array(
+            'reports' => Report::get()
+        ) );
+    }
 }
 ?>

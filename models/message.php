@@ -52,34 +52,6 @@ class Message
 
         return $id;
     }
-
-    public static function report( $id, $reason = 0 )
-    {
-        $get = DB::getConnection()->prepare( "SELECT messages.user_id, inbox.message_id AS id FROM inbox
-                INNER JOIN messages ON messages.id = inbox.message_id
-                WHERE inbox.id = :id LIMIT 1" );
-        $get->execute( array(
-            ':id' => $id
-        ) );
-
-        $result = $get->fetchAll()[0];
-
-        if( $reason == 0 )
-        {
-            $insert = DB::getConnection()->prepare( "INSERT INTO reports (message_id, user_id) VALUES (:message_id, :user_id)" );
-            $insert->execute( array(
-                ':message_id' => $result['id'],
-                ':user_id'    => $result['user_id']
-            ) );
-
-            $update = DB::getConnection()->prepare( "UPDATE inbox SET reported = :reported WHERE id = :id" );
-            $update->execute( array(
-                ':reported' => true,
-                ':id'       => $id
-            ) );
-        }
-    }
-
     public static function delete( $id )
     {
         $delete = DB::getConnection()->prepare( "DELETE FROM inbox WHERE id = :id" );

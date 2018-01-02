@@ -4,7 +4,7 @@ class User
 
     public static function get( $id )
     {
-        $get = DB::getConnection()->prepare( "SELECT users.name, user_states.name AS state FROM users
+        $get = DB::getConnection()->prepare( "SELECT users.name, users.state_id, user_states.name AS state FROM users
                     INNER JOIN user_states ON user_states.id = users.state_id WHERE users.id = :id LIMIT 1" );
         $get->execute( array(
             ':id' => $id

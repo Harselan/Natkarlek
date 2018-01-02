@@ -9,7 +9,7 @@ class MessageController
 
     public function report( $id )
     {
-        Message::report( $id );
+        Report::do( $id );
         redirect( "/" );
     }
 
