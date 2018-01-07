@@ -13,7 +13,8 @@ class DashboardController
     public function admin()
     {
         view( 'dashboard/admin', array(
-            'reports' => Report::get()
+            'reports' => Report::get(),
+            'users'   => User::get()
         ) );
     }
 }

@@ -286,14 +286,12 @@ tr{
 #aboutPopup h2, .reports h2{
     text-align: center;
 }
-.reports table{
-    width: 100%;
-}
-.reports table tr{
-    width:100%;
-}
 .reports table tr td{
     width:16.6%;
+    text-align: center;
+}
+.users table tr td{
+    width:25%;
     text-align: center;
 }
 /**/
